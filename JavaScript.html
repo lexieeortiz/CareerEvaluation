@@ -1,0 +1,48 @@
+
+<script>
+function calculateResult() {
+    let creative = 0;
+    let security = 0;
+    let math = 0;
+
+    const answers = document.querySelectorAll('input[type="radio"]:checked');
+
+   
+    if (answers.length < 15) {
+        document.getElementById("result").innerHTML = 
+        "<p style='color:red;'>Please answer all 15 questions before getting your result.</p>";
+        return;
+    }
+
+   
+            creative++;
+        } else if (answer.value === "security") {
+            security++;
+        } else if (answer.value === "math") {
+            math++;
+        }
+    });
+
+    let resultText = "";
+
+    
+    if (creative >= security && creative >= math) {
+        resultText = `
+        <h2> Creative-Based Tech</h2>
+        <p>You enjoy design, visuals, and user experience.</p>
+        <p><strong>Try:</strong> UX Designer, Web Designer, Front-End Developer</p>
+        `;
+    } 
+    else if (security >= creative && security >= math) {
+        resultText = `
+        <h2> Security-Based Tech</h2>
+        <p>You are detail-oriented and like protecting systems.</p>
+        <p><strong>Try:</strong> Cybersecurity Analyst, Digital Forensics</p>
+        `;
+    } 
+    else {
+        resultText = `
+        <h2> Math-Based Tech</h2>
+       <p> You enjoy solving complex, real-world problems using logic and data</p>
+		<p><strong>Try:</strong> AI Engineer,Data Scientist, Robotics Engineer</p>
+        ;
